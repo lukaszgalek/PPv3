@@ -1,15 +1,24 @@
 package SDA;
 
+import org.apache.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+
 /**
  * Hello world!
  */
 public class App {
+
+    protected static final Logger log =  Logger.getLogger(App.class.getName());
     public static void main(String[] args) {
+
+
+
+// log4j  jest warn nie warning
 
 
         Random generator = new Random();
@@ -18,7 +27,7 @@ public class App {
 
 
         for (int i = 0; i < 20; i++) {
-
+            log.warn("warning");
             int value = generator.nextInt(10) + 1;// pierwszy nawias informuje do jakiej wartości losuje, + wartość mówi od jakiej wartości losuje
             if (value % 2 == 0) {
                 if (parzyste.size() < 10) {
@@ -98,6 +107,7 @@ public class App {
 
         }
 public static Integer[] sort(List<Integer>list) {
+    log.info("Try to Sort values: " + list);
     Integer[] values = new Integer[list.size()];
     list.toArray(values);
     for (int i = 0; i <= values.length - 1; i++) {
@@ -114,6 +124,9 @@ public static Integer[] sort(List<Integer>list) {
         values[minIndex] = temp;
 
     }
+
     return values;
 }
-    }
+
+
+}
